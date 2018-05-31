@@ -9,4 +9,4 @@ import java.util.*
  */
 @Entity(tableName = "laugher")
 data class Laugher(@PrimaryKey val id: String = UUID.randomUUID().toString(),
-                   val name: String)
+                   val displayName: String, val fileName: String)
