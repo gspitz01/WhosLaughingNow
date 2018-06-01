@@ -80,6 +80,7 @@ dependencies {
     implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
     implementation "android.arch.lifecycle:extensions:$rootProject.archLifecycleVersion"
     implementation "android.arch.persistence.room:runtime:$rootProject.archRoomVersion"
+    implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
     kapt "android.arch.persistence.room:compiler:$rootProject.archRoomVersion"
 
     // Dagger

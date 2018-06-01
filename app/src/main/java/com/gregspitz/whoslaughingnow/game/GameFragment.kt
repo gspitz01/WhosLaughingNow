@@ -1,5 +1,6 @@
 package com.gregspitz.whoslaughingnow.game
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.support.annotation.VisibleForTesting
 import android.support.v4.app.Fragment
@@ -26,6 +27,7 @@ class GameFragment : Fragment(), GameContract.View {
     private var active = false
     private lateinit var buttonList: List<Button>
     private lateinit var laughers: List<Laugher>
+    private var mediaPlayer: MediaPlayer? = null
 
     companion object {
         @JvmStatic
@@ -50,6 +52,10 @@ class GameFragment : Fragment(), GameContract.View {
 
         // Create presenter
         GamePresenter(useCaseHandler, this, getNewGame)
+
+        playButton.setOnClickListener {
+            mediaPlayer?.start()
+        }
     }
 
     override fun onResume() {
@@ -63,8 +69,20 @@ class GameFragment : Fragment(), GameContract.View {
         active = false
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        mediaPlayer?.release()
+    }
+
     override fun setLoadingIndicator(active: Boolean) {
         // TODO: implement
+    }
+
+    override fun setLaughFile(laughFileName: String) {
+        val laughResourceId =
+                resources.getIdentifier(laughFileName, "raw", activity?.packageName)
+        mediaPlayer?.release()
+        mediaPlayer = MediaPlayer.create(activity, laughResourceId)
     }
 
     override fun showLaughers(laughers: List<Laugher>) {
@@ -115,4 +133,7 @@ class GameFragment : Fragment(), GameContract.View {
 
     @VisibleForTesting
     fun getPresenter() = presenter
+
+    @VisibleForTesting
+    fun getMediaPlayer() = mediaPlayer
 }

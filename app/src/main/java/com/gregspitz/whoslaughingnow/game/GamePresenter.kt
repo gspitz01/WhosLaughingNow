@@ -32,6 +32,7 @@ class GamePresenter(private val useCaseHandler: UseCaseHandler,
                         laughers.addAll(response.game.wrongAnswers)
                         if (gameView.isActive()) {
                             gameView.setLoadingIndicator(false)
+                            gameView.setLaughFile(response.game.correctAnswer.fileName)
                             gameView.showLaughers(laughers.shuffled())
                         }
                     }

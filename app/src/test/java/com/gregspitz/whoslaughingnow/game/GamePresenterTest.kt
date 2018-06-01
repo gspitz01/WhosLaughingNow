@@ -47,7 +47,7 @@ class GamePresenterTest {
     }
 
     @Test
-    fun onLoadNewGame_successFromUseCase_callsShowLaughersOnView() {
+    fun onLoadNewGame_successFromUseCase_callsShowLaughersAndSetLaughFileOnView() {
         gamePresenter.loadNewGame()
         verifyLoadNewGameSuccess()
     }
@@ -102,6 +102,7 @@ class GamePresenterTest {
 
         verifySetLoadingIndicator(false)
         verify(gameView).showLaughers(showLaughersCaptor.capture())
+        verify(gameView).setLaughFile(eq(GAME.correctAnswer.fileName))
         val laughers = showLaughersCaptor.firstValue
 
         assertEquals(4, laughers.size)

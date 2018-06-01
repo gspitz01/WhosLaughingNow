@@ -22,6 +22,9 @@ import org.robolectric.annotation.Config
 @Config(constants = BuildConfig::class)
 class GameFragmentRobolectricTest {
 
+    // Tests for playButton are only in instrumentation tests because figuring out
+    // how Robolectric ShadowMediaPlayer works is quite the challenge.
+
     private val localDataSource =
             WhosLaughingApplication.repoComponent.exposeLocalDataSource()
 
@@ -88,8 +91,7 @@ class GameFragmentRobolectricTest {
         clickButtonByText(correctText)
         assertRightAnswerTextVisible()
 
-        val nextGameButton = activity.findViewById<Button>(R.id.nextGameButton)
-        nextGameButton.performClick()
+        activity.findViewById<Button>(R.id.nextGameButton).performClick()
 
         // Only asserting messages gone to prove new game happened
         // Spying on a Fragment with Robolectric is maybe impossible

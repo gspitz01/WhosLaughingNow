@@ -3,7 +3,7 @@ package com.gregspitz.whoslaughingnow
 import com.gregspitz.whoslaughingnow.data.model.Game
 import com.gregspitz.whoslaughingnow.data.model.Laugher
 
-object TestData {
+object AndroidTestData {
 
     val LAUGHERS = listOf(
             Laugher("0", "Lizzy Caplan", "lizzy_caplan"),

@@ -15,6 +15,8 @@ interface GameContract {
 
         fun setLoadingIndicator(active: Boolean)
 
+        fun setLaughFile(laughFileName: String)
+
         fun showLaughers(laughers: List<Laugher>)
 
         fun showFailedToLoadGame()
