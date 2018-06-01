@@ -20,5 +20,5 @@ interface GameDataSource {
      * @param callback to handle success or failure
      * @return all the Laughers from this source
      */
-    fun getLaughers(callback: GetLaughersCallback): List<Laugher>
+    fun getLaughers(callback: GetLaughersCallback)
 }

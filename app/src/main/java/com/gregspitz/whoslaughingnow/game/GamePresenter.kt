@@ -1,5 +1,6 @@
 package com.gregspitz.whoslaughingnow.game
 
+import android.support.annotation.VisibleForTesting
 import com.gregspitz.whoslaughingnow.UseCase
 import com.gregspitz.whoslaughingnow.UseCaseHandler
 import com.gregspitz.whoslaughingnow.data.model.Game
@@ -57,4 +58,7 @@ class GamePresenter(private val useCaseHandler: UseCaseHandler,
     override fun start() {
         loadNewGame()
     }
+
+    @VisibleForTesting
+    fun getGame() = game
 }

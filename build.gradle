@@ -40,6 +40,7 @@ ext {
     kaptDaggerCompilerVersion = '2.13'
     junitVersion = '4.12'
     mockitoKotlinVersion = '1.5.0'
-    supportTestRunnerVersion = '1.0.1'
+    robolectricVersion = '3.8'
+    supportTestRunnerVersion = '1.0.2-alpha1'
     espressoVersion = '3.0.1'
 }

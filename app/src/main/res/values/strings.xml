@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">WhosLaughingNow</string>
+    <string name="play_button_text">Play Laugh</string>
+    <string name="failed_to_load_game_text">Could not load game!</string>
+    <string name="right_answer_text">Correct!</string>
+    <string name="wrong_answer_text">Wrong!</string>
+    <string name="next_game_button_text">Next Game</string>
 </resources>
